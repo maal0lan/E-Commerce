@@ -637,6 +637,211 @@
   font-size: 12px;
 }
 
+.star-display {
+  color: var(--color-star);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.product-rating {
+  gap: 9px;
+}
+
+.product-rating strong {
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.product-rating a {
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.review-section {
+  margin-top: 72px;
+  padding-top: 30px;
+  border-top: 1px solid var(--color-border);
+}
+
+.review-section__heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 24px;
+}
+
+.review-section__heading .section-kicker {
+  margin-bottom: 5px;
+}
+
+.review-section__heading h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.review-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-summary__score {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.review-summary > div {
+  display: grid;
+  gap: 3px;
+}
+
+.review-summary > div > span:last-child {
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.review-section__body {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  align-items: start;
+  gap: 44px;
+}
+
+.review-form {
+  display: grid;
+  gap: 9px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.review-form h3 {
+  margin: 0 0 6px;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.review-form label,
+.review-form__rating legend {
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  color: var(--color-text);
+  background: var(--color-surface);
+  font: 13px var(--font-body);
+}
+
+.review-form textarea {
+  resize: vertical;
+}
+
+.review-form__rating {
+  margin: 0 0 4px;
+  padding: 0;
+  border: 0;
+}
+
+.review-form__rating > div {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.review-form__star {
+  padding: 0 2px;
+  border: 0;
+  color: var(--color-border-strong);
+  background: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.review-form__star:hover,
+.review-form__star.is-selected {
+  color: var(--color-star);
+}
+
+.review-form .button {
+  justify-self: start;
+  margin-top: 5px;
+  padding: 0;
+}
+
+.review-form__message,
+.review-form__note {
+  min-height: 0;
+  margin: 0;
+  color: var(--color-success);
+  font-size: 11px;
+}
+
+.review-form__note {
+  color: var(--color-muted);
+}
+
+.review-list {
+  display: grid;
+}
+
+.review-list__empty {
+  margin: 0;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.review-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.review-item:first-child {
+  padding-top: 0;
+}
+
+.review-item__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.review-item__meta time {
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.review-item p {
+  margin: 7px 0 0;
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
 .related-products {
   margin-top: 76px;
   padding-top: 30px;
@@ -1608,6 +1813,10 @@
     gap: 42px;
   }
 
+  .review-section__body {
+    gap: 28px;
+  }
+
   .order-recommendations {
     position: static;
   }
@@ -1685,6 +1894,26 @@
 
   .order-page--placed {
     padding-top: 44px;
+  }
+
+  .review-section {
+    margin-top: 48px;
+    padding-top: 24px;
+  }
+
+  .review-section__heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .review-section__body {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .review-form {
+    padding: 16px;
   }
 
   .order-recommendations__grid {

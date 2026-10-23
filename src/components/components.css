@@ -107,6 +107,9 @@
 }
 .wordmark,
 .site-footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: inherit;
   font-family: var(--font-heading);
   font-size: 21px;
@@ -117,6 +120,14 @@
 
 .wordmark span {
   color: var(--color-mark);
+}
+
+.wordmark__logo {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  mix-blend-mode: screen;
 }
 
 .site-nav {

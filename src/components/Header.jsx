@@ -59,6 +59,7 @@ const Header = () => {
     <header className="site-header">
       <div className="site-header__inner">
         <Link aria-label="Common Goods home" className="wordmark" to="/">
+          <img alt="" className="wordmark__logo" src="/logo.png" />
           common goods<span>.</span>
         </Link>
         <nav aria-label="Main navigation" className="site-nav">
