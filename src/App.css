@@ -1520,12 +1520,13 @@
   background: var(--color-header);
 }
 
-.home-hero__mark > span {
-  font-family: var(--font-heading);
-  font-size: clamp(180px, 26vw, 330px);
-  font-weight: 800;
-  letter-spacing: -0.16em;
-  line-height: 0.8;
+.home-hero__logo {
+  display: block;
+  width: clamp(116px, 15vw, 180px);
+  aspect-ratio: 1;
+  image-rendering: pixelated;
+  object-fit: contain;
+  mix-blend-mode: screen;
 }
 
 .home-hero__mark > div,
@@ -1845,6 +1846,10 @@
 
   .home-hero__mark {
     min-height: 260px;
+  }
+
+  .home-hero__logo {
+    width: 124px;
   }
 
   .home-values {

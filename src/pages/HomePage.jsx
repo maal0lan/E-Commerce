@@ -11,8 +11,8 @@ const HomePage = () => (
           Explore the collection <span aria-hidden="true">→</span>
         </Link>
       </div>
-      <div aria-label="Common Goods, useful by nature" className="home-hero__mark">
-        <span aria-hidden="true">CG</span>
+      <div className="home-hero__mark">
+        <img alt="Common Goods logo" className="home-hero__logo" src="/logo.png" />
         <div><span>Useful by nature</span><span>Made for every day</span></div>
       </div>
     </section>
