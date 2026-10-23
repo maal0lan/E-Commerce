@@ -426,6 +426,85 @@
   }
 }
 
+@media (max-width: 850px) {
+  .site-header__inner {
+    grid-template-areas:
+      "brand account bag"
+      "nav nav theme"
+      "search search search";
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    width: calc(100% - 32px);
+    min-height: 0;
+    padding: 12px 0;
+    column-gap: 8px;
+    row-gap: 12px;
+  }
+
+  .site-nav {
+    grid-area: nav;
+    justify-content: flex-start;
+    gap: 0;
+    min-height: 38px;
+    border-top: 1px solid var(--color-header-border);
+    border-bottom: 1px solid var(--color-header-border);
+  }
+
+  .site-nav a {
+    display: grid;
+    min-height: 38px;
+    align-items: center;
+    margin-right: 22px;
+    font-size: 12px;
+  }
+
+  .site-nav a.active {
+    text-underline-offset: 5px;
+  }
+
+  .wordmark {
+    grid-area: brand;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .header-cart {
+    grid-area: bag;
+    min-height: 36px;
+    padding: 0 9px;
+    font-size: 12px;
+  }
+
+  .header-account {
+    grid-area: account;
+    justify-self: end;
+    min-height: 36px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  .site-header__tools {
+    display: contents;
+  }
+
+  .header-search {
+    grid-area: search;
+    width: 100%;
+    min-height: 38px;
+    padding: 0 9px;
+  }
+
+  .header-search input {
+    height: 36px;
+    padding: 0;
+  }
+
+  .theme-toggle {
+    grid-area: theme;
+    height: 38px;
+    min-width: 54px;
+  }
+}
+
 @media (max-width: 620px) {
   .site-header__inner {
     display: grid;

@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "E-commerence site"
             }
+          },
+          {
+            "id": "40274bfcf3395517",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.14.5"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.14.5"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -188,7 +201,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "d2785a193c0d2e6d",
+  "active": "40274bfcf3395517",
   "lastOpenFiles": [
     "Welcome.md",
     "E-commerence site.md"
