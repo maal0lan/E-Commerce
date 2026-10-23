@@ -1,0 +1,18 @@
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #1b1f2a;
+  background: #f6f7f9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --color-header: #1b1f2a;
+  --color-accent: #c2410c;
+  --color-page: #f6f7f9;
+  --color-surface: #fff;
+  --color-border: #e4e7ee;
+  --color-muted: #5b6170;
+  --color-free-shipping: #1f6f5a;
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Manrope', sans-serif;
+  --content-width: 1200px;
+}
