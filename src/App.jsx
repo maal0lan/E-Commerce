@@ -10,6 +10,8 @@ import { fetchProducts } from './features/products/productsSlice'
 import './App.css'
 
 const ProductListPage = lazy(() => import('./pages/ProductListPage'))
+const HomePage = lazy(() => import('./pages/HomePage'))
+const LoginPage = lazy(() => import('./pages/LoginPage'))
 const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage'))
 const CartPage = lazy(() => import('./pages/CartPage'))
 const OrderPlacedPage = lazy(() => import('./pages/OrderPlacedPage'))
@@ -45,11 +47,13 @@ const App = () => {
       <ErrorBoundary>
         <Suspense fallback={<main className="route-loading" aria-live="polite">Loading the shop...</main>}>
           <Routes>
-            <Route element={<ProductListPage notify={showToast} />} path="/" />
+            <Route element={<HomePage />} path="/" />
+            <Route element={<ProductListPage notify={showToast} />} path="/products" />
             <Route element={<ProductDetailPage notify={showToast} />} path="/products/:productId" />
+            <Route element={<LoginPage />} path="/login" />
             <Route element={<CartPage notify={showToast} />} path="/cart" />
             <Route element={<ApproachPage />} path="/approach" />
-            <Route element={<OrderPlacedPage />} path="/orders/:orderId" />
+            <Route element={<OrderPlacedPage notify={showToast} />} path="/orders/:orderId" />
             <Route element={<NotFoundPage />} path="*" />
           </Routes>
         </Suspense>

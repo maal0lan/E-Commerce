@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import ProductImage from '../components/ProductImage'
 import QtyStepper from '../components/QtyStepper'
@@ -9,6 +9,7 @@ import { selectCartDetails, selectTotalPrice } from '../features/cart/selectors'
 import { getCouponRule } from '../features/coupons/couponRules'
 import { applyCoupon, removeCoupon } from '../features/coupons/couponsSlice'
 import { placeOrder } from '../features/orders/ordersSlice'
+import useAuth from '../contexts/useAuth'
 import { selectProductStatus } from '../features/products/selectors'
 import formatPrice from '../utils/formatPrice'
 import { calculatePricing, formatCents, validateCoupon } from '../utils/pricing'
@@ -16,6 +17,8 @@ import { calculatePricing, formatCents, validateCoupon } from '../utils/pricing'
 const CartPage = ({ notify }) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const location = useLocation()
+  const { username } = useAuth()
   const items = useSelector(selectCartDetails)
   const subtotalCents = useSelector(selectTotalPrice)
   const appliedCode = useSelector((state) => state.coupons.appliedCode)
@@ -47,10 +50,17 @@ const CartPage = ({ notify }) => {
 
   const submitOrder = () => {
     if (!items.length || !allProductsLoaded) return
+    if (!username) {
+      navigate('/login', { state: { from: `${location.pathname}${location.search}` } })
+      return
+    }
 
     const orderId = `CG-${Date.now().toString(36).toUpperCase()}`
+    const invoiceId = `INV-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`
     const order = {
       id: orderId,
+      invoiceId,
+      username,
       placedAt: new Date().toISOString(),
       items: items.map(({ id, qty, priceCents, product }) => ({
         id,
@@ -74,11 +84,11 @@ const CartPage = ({ notify }) => {
       <main className="cart-page">
         <div className="cart-page__heading">
           <div><p className="section-kicker">Your selection</p><h1>Your bag</h1></div>
-          <Link className="text-link" to="/">Continue shopping</Link>
+          <Link className="text-link" to="/products">Continue shopping</Link>
         </div>
         <div className="cart-empty">
           <p>Your bag is taking a breather.</p>
-          <Link className="text-link" to="/">Find something useful</Link>
+          <Link className="text-link" to="/products">Find something useful</Link>
         </div>
       </main>
     )
@@ -88,8 +98,9 @@ const CartPage = ({ notify }) => {
     <main className="cart-page">
       <div className="cart-page__heading">
         <div><p className="section-kicker">Your selection</p><h1>Your bag</h1></div>
-        <Link className="text-link" to="/">Continue shopping</Link>
+        <Link className="text-link" to="/products">Continue shopping</Link>
       </div>
+      {username && <p className="cart-page__welcome">Shopping as <strong>{username}</strong></p>}
       {productStatus === 'loading' && !allProductsLoaded && (
         <p aria-live="polite" className="cart-loading">Loading the details for your bag...</p>
       )}

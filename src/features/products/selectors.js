@@ -54,6 +54,6 @@ export const selectPaginatedProducts = createSelector(
 export const selectRelatedProducts = createSelector(
   [selectAllProducts, (_, productId) => productId, (_, __, category) => category],
   (products, productId, category) => products
-    .filter((product) => product.id !== productId && product.category === category)
+    .filter((product) => product && product.id !== productId && product.category === category)
     .slice(0, 4),
 )

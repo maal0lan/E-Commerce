@@ -66,29 +66,18 @@ const ProductListPage = ({ notify }) => {
 
   return (
     <main>
-      <section className="intro">
-        <div className="intro__content">
-          <p className="intro__eyebrow">A little more considered</p>
-          <h1>Good things, chosen well.</h1>
-          <p className="intro__summary">
-            Everyday finds for the way you live, picked for quality, usefulness and lasting appeal.
-          </p>
-          <a className="intro__link" href="#shop">Explore the collection <span aria-hidden="true">↓</span></a>
-        </div>
-        <div aria-label="A selection of considered everyday goods" className="intro__visual">
-          <div aria-hidden="true" className="intro__visual-mark">CG</div>
-          <div className="intro__caption">
-            <span>Useful by nature</span>
-            <span>Made for every day</span>
+      <section className="collection collection--catalog" id="shop">
+        <div className="catalog-hero">
+          <div>
+            <p className="section-kicker">A little more considered</p>
+            <h1>Everyday, made better.</h1>
           </div>
+          <p>Useful pieces, chosen for quality and lasting appeal. Find something that feels right for every day.</p>
         </div>
-      </section>
-
-      <section className="collection" id="shop">
         <div className="collection__heading">
           <div>
             <p className="section-kicker">The collection</p>
-            <h2>Everyday, made better.</h2>
+            <h2>Shop all goods.</h2>
           </div>
           <p>Useful pieces. A fair price. Nothing extra.</p>
         </div>

@@ -10,7 +10,7 @@ const ApproachPage = () => (
           Common Goods is a small, considered collection of useful things for everyday life.
           We keep the shop focused so it is easier to find what you came for.
         </p>
-        <Link className="button button--primary approach-hero__action" to="/">
+        <Link className="button button--primary approach-hero__action" to="/products">
           Browse the collection
         </Link>
       </div>
@@ -55,7 +55,7 @@ const ApproachPage = () => (
         <h2>Find your next everyday favourite.</h2>
         <p>Take a look through the collection and see what feels right for you.</p>
       </div>
-      <Link className="text-link" to="/">Shop the collection <span aria-hidden="true">→</span></Link>
+      <Link className="text-link" to="/products">Shop the collection <span aria-hidden="true">→</span></Link>
     </section>
   </main>
 )
